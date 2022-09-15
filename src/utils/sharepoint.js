@@ -34,7 +34,7 @@ function getHeaders() {
   *  
   * @returns {promises(Object)} List
   */
-export async function getArticles() {
+ async function getArticles() {
     const url = `${apiUrl}/lists/getbytitle('Articles')/items`;
     const headers = await getHeaders();
 
@@ -64,7 +64,7 @@ export async function getArticles() {
     })
 }
 
-export async function  getKeywords(){
+ async function  getKeywords(){
     const url = `${apiUrl}/lists/getbytitle('Keywords')/items`;
     const headers = await getHeaders();
 
@@ -89,4 +89,10 @@ export async function  getKeywords(){
         })
         .catch(reject)
     })
+}
+
+
+module.exports = {
+    getArticles,
+    getKeywords
 }

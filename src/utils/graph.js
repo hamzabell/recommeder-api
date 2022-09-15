@@ -1,6 +1,6 @@
-import ug from 'ug';
+const ug =  require('ug');
 
 
-export const graph  = new ug.Graph();
+module.exports = new ug.Graph();
 
 

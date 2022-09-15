@@ -1,11 +1,11 @@
-import { graph } from './graph';
+const { graph } = require('./graph');
 
 /**
  * @param {GraphNode} node
  * @return {array} closest 
  */
 
-export default function (node) {
+function GetClosest(node) {
 
     return new Promise((resolve, reject) => {
         graph.load('./graph.ugd', function () {
@@ -35,3 +35,5 @@ export default function (node) {
 
 
 }
+
+module.exports = GetClosest;

@@ -1,5 +1,7 @@
-import { graph , getArticles, getKeywords } from './utils';
-import fs from 'fs';
+
+const fs = require('fs');
+const { getArticles, getKeywords }  = require('./utils/sharepoint');
+const graph = require('./utils/graph');
 
 async function Keywords() {
     const articles = await getArticles();
@@ -28,7 +30,7 @@ async function Keywords() {
     return k;
 }
 
-export async function createGraph() {
+ async function createGraph() {
     const articles = await getArticles();
     const keywords = await Keywords();
 
@@ -58,4 +60,8 @@ export async function createGraph() {
             if(err) console.log(err);
         })
     })
+}
+
+module.exports = {
+    createGraph
 }

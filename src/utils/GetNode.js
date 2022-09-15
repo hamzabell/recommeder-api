@@ -1,4 +1,4 @@
-import { graph } from './graph'
+const { graph } = require('./graph')
 
 
 /**
@@ -7,8 +7,7 @@ import { graph } from './graph'
  * @param {number} id 
  * @returns {Promise} GraphNode
  */
-
-export function getNode(id) {
+function getNode(id) {
     return new Promise((resolve, reject) => {
         graph.load('./graph.ugd', () => {
             try {
@@ -19,4 +18,8 @@ export function getNode(id) {
             }
         })
     })
+}
+
+module.exports = {
+    getNode
 }

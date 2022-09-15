@@ -1,9 +1,9 @@
-import express from 'express';
-import cors from 'cors';
-import bodyParser from 'body-parser';
-import GetClosest from './src/utils/GetClosest';
-import { getNode } from './src/utils/GetNode';
-import { createGraph }  from './src'
+const express = require('express');
+const cors = require('cors');
+const bodyParser =  require('body-parser');
+const GetClosest = require('./src/utils/GetClosest');
+const { getNode } = require('./src/utils/GetNode');
+const { createGraph }  = require('./src')
 
 require('dotenv').config();
 
@@ -56,7 +56,7 @@ app.get('/build-graph', async (req, res) => {
 })
 
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 3000, () => {
     console.log('Server is running!')
 })
 
